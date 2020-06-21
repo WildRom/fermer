@@ -1,3 +1,9 @@
+<?php 
+
+require_once('inc/config.php');
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +42,7 @@
             <h4 class="eng">Create your an account</h4>
           </div>
           <!-- forma -->
-          <form action="reg.php" method="post">
+          <form action="inc/reg.php" method="post">
             <div class="form-input">
               <span><i class="fa fa-user"></i></span>
               <input type="text" name="user_nick" placeholder="Enter nick..." required>
@@ -59,8 +65,8 @@
               </div>
             </div>
             <div class="text-left mb-3">
-              <button type="submit" class="btn ltu">Kurti personažą</button>
-              <button type="submit" class="btn eng">Create account</button>
+              <button type="submit" name="register" value="register" class="btn ltu">Kurti personažą</button>
+              <button type="submit" name="register" value="register" class="btn eng">Create account</button>
             </div>
             <div style="color: #777" class="ltu">Jau prisiregistravęs?
               <a href="index.php" class="login-link">Junkis</a>

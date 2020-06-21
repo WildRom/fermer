@@ -1,0 +1,12 @@
+ferm_users:
+  user_id,
+  nick_name,
+  password,
+  sessionID,
+  user_email,
+  character_birth_day,
+  character_money,
+  experience,
+  level,
+  dateCreate,
+  dateModify
