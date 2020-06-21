@@ -1,7 +1,3 @@
-<?php
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +13,20 @@
 
 <body>
   <div class="container-fluid">
+    <!-- row -->
     <div class="row">
+
+      <!-- image container -->
       <div class="col-lg-6 col-md-6 d-none d-md-block image-container">
       </div>
+      <!-- end image container -->
 
 
+      <!-- form container -->
       <div class="col-lg-6 col-md-6 form-container">
+
+
+        <!-- form box -->
         <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
           <div class="logo mb-3">
             <img src="img/graphics-farm-283688.gif" alt="logo">
@@ -64,13 +68,20 @@
             <div style="color: #777" class="eng">Don't have an account
               <a href="register.php" class="register-link">Register here</a>
             </div>
-          </form>
+            <div class="licence">
+              <small><a href='https://www.freepik.com/free-photos-vectors/wood'>Wood vector created by studiogstock -
+                  www.freepik.com</a></small>
+            </div>
+          </form><!-- end  forma -->
 
-          <!-- end  forma -->
-        </div>
-      </div>
+        </div><!-- end form box -->
+
+      </div><!-- end form container -->
+
     </div><!-- .row end -->
+
   </div><!-- container -->
+
 
   <script src=" js/main.js"></script>
 </body>
