@@ -36,7 +36,7 @@
             <h4 class="eng">Create your an account</h4>
           </div>
           <!-- forma -->
-          <form action="index.php" method="post">
+          <form action="reg.php" method="post">
             <div class="form-input">
               <span><i class="fa fa-user"></i></span>
               <input type="text" name="user_nick" placeholder="Enter nick..." required>
