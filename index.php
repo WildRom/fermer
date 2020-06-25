@@ -1,6 +1,11 @@
 <?php 
 
 require_once('inc/config.php');
+if($_GET) {
+  echo "<pre";
+  var_dump($_GET);
+  echo "</pre";
+}
 
 ?>
 <!DOCTYPE html>
@@ -41,10 +46,10 @@ require_once('inc/config.php');
             <h4 class="eng">Login into your account</h4>
           </div>
           <!-- forma -->
-          <form action="index.php" method="post">
+          <form action="inc/login.php" method="post">
             <div class="form-input">
-              <span><i class="fa fa-envelope"></i></span>
-              <input type="email" name="email" placeholder="Email address..." required>
+              <span><i class="fa fa-user"></i></span>
+              <input type="text" name="user_nick" placeholder="User name..." required>
             </div>
             <div class="form-input">
               <span><i class="fa fa-lock"></i></span>
@@ -64,8 +69,8 @@ require_once('inc/config.php');
               </div>
             </div>
             <div class="text-left mb-3">
-              <button type="submit" class="btn ltu">Jungtis</button>
-              <button type="submit" class="btn eng">Login</button>
+              <button type="submit" class="btn ltu" name="login" value="login">Jungtis</button>
+              <button type="submit" class="btn eng" name="login" value="login">Login</button>
             </div>
             <div style="color: #777" class="ltu">Neturi akaunto?
               <a href="register.php" class="register-link">Registruokis</a>

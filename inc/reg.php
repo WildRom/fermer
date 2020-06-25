@@ -1,7 +1,7 @@
 <?php
 
 // Connect to DB
-require_once('../inc/config.php');
+require_once('config.php');
 session_start();
 
 //get POST info
@@ -40,7 +40,7 @@ if($_POST['register'] === 'register') {
       $password = password_hash($password, PASSWORD_DEFAULT);
       $time = time();
       $sessionID = rand(1, 1000000000);
-
+        
       $query = "INSERT INTO ferm_users(
         nick_name, 
         password, 
@@ -61,7 +61,11 @@ if($_POST['register'] === 'register') {
         'user_email'=> $email,
         'character_birth_day'=> $time
       ]);
-      echo "All Ok!";
+
+      // SET COOKIE
+      print('<script>setCookie("FERMER_NICK_NAME", "'.$user.'");</script>');
+      print('<script>setCookie("FERMER_SESSION", "'.$sessionID.'");</script>');
+      print('<script>location.href="game.php?NickName='.$user.'"</script>');
     }    
   };
 
