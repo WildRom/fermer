@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <!-- <script src="../js/cookies.js"></script> -->
+  <script>
+  function setCookie(name, value) {
+    document.cookie = name + "=" + escape(value) + "; path=/";
+  }
+  </script>
+</head>
 <?php
 
 // Connect to DB
@@ -11,33 +23,35 @@ if($_POST['login'] === 'login') {
   } else {
     // Get data from DB
     $data = $_POST;
+    
     // echo '<pre>';
     // var_dump($data);
     // echo '</pre>';
-    
-    $user_nick = $data['user_nick'];
-    $user_pass = $data['password'];
+    // exit;
+
+    $user = $data['user_nick'];
+    $password = $data['password'];
 
     //Check user name for unique
-    $stmt = $db->prepare("SELECT * FROM ferm_users WHERE nick_name=:name");
-    $stmt->execute(["name"=>$user_nick]);
+    $stmt = $db->prepare("SELECT * FROM farm_users WHERE nick_name=:name");
+    $stmt->execute(["name"=>$user]);
     $userCount = $stmt->rowCount();
-    $user = $stmt->fetch();
+    $user_data = $stmt->fetch();
 
     if(!$userCount){
       echo "No such user"; 
     } elseif($userCount === 1){
-      if(password_verify($user_pass, $user['password'])){
+      if(password_verify($password, $user_data['password'])){
         //Password good
         $sessionID = rand(1, 1000000000);
 
         // UPDATE SESSIONID
-        $stmt = $db->prepare("UPDATE ferm_users SET sessionID=:sessionID WHERE nick_name=:name");
-        $stmt->execute(["sessionID"=>$sessionID, "name"=>$user_nick]);
-
-        print('<script>setCookie("FERMER_NICK_NAME", "'.$user.'");</script>');
-        print('<script>setCookie("FERMER_SESSION", "'.$sessionID.'");</script>');
-        print('<script>location.href="../game.php?NickName='.$user['nick_name'].'"</script>');        
+        $stmt = $db->prepare("UPDATE farm_users SET sessionID=:sessionID WHERE nick_name=:name");
+        $stmt->execute(["sessionID"=>$sessionID, "name"=>$user]);
+        
+        print('<script>setCookie("FARMER_NICK_NAME", "'.$user.'");</script>');
+        print('<script>setCookie("FARMER_SESSION", "'.$sessionID.'");</script>');
+        print('<script>location.href="../game.php?NickName='.$user.'"</script>');        
       } else {
        print('<script>location.href="../index.php?msg=wrong"</script>');
       }
@@ -46,3 +60,5 @@ if($_POST['login'] === 'login') {
 
 }
 ?>
+
+</html>

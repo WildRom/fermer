@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- <script src="../js/cookies.js"></script> -->
+  <script>
+  function setCookie(name, value) {
+    document.cookie = name + "=" + escape(value) + "; path=/";
+  }
+  </script>
+</head>
 <?php
 
 // Connect to DB
@@ -19,12 +33,12 @@ if($_POST['register'] === 'register') {
     $email = $data['email'];
 
     //Check user name for unique
-    $stmt = $db->prepare("SELECT * FROM ferm_users WHERE nick_name=:name");
+    $stmt = $db->prepare("SELECT * FROM farm_users WHERE nick_name=:name");
     $stmt->execute(["name"=>$user]);
     $userCount = $stmt->rowCount();
 
     //Check user email for unique
-    $stmt = $db->prepare("SELECT * FROM ferm_users WHERE user_email=:email");
+    $stmt = $db->prepare("SELECT * FROM farm_users WHERE user_email=:email");
     $stmt->execute(["email"=>$email]);
     $emailCount = $stmt->rowCount();
 
@@ -41,7 +55,7 @@ if($_POST['register'] === 'register') {
       $time = time();
       $sessionID = rand(1, 1000000000);
         
-      $query = "INSERT INTO ferm_users(
+      $query = "INSERT INTO farm_users(
         nick_name, 
         password, 
         sessionID, 
@@ -63,14 +77,15 @@ if($_POST['register'] === 'register') {
       ]);
 
       // SET COOKIE
-      print('<script>setCookie("FERMER_NICK_NAME", "'.$user.'");</script>');
-      print('<script>setCookie("FERMER_SESSION", "'.$sessionID.'");</script>');
-      print('<script>location.href="game.php?NickName='.$user.'"</script>');
+      print('<script>setCookie("FARMER_SESSION", "'.$sessionID.'");</script>');
+      print('<script>setCookie("FARMER_NICK_NAME", "'.$user.'");</script>');
+      print('<script>location.href="game.php?NewGame="true"&NickName='.$user.'"</script>');
     }    
   };
 
 } else {
   header("Location: ../index.php");
 }
-
 ?>
+
+</html>

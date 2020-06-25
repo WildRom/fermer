@@ -69,10 +69,11 @@ if($_GET) {
               </div>
             </div>
             <div class="text-left mb-3">
+              <input type="hidden" name="new_game" value="false">
               <button type="submit" class="btn ltu" name="login" value="login">Jungtis</button>
               <button type="submit" class="btn eng" name="login" value="login">Login</button>
             </div>
-            <div style="color: #777" class="ltu">Neturi akaunto?
+            <div style="color: #777" class="ltu">Dar neprisiregistravęs?
               <a href="register.php" class="register-link">Registruokis</a>
             </div>
             <div style="color: #777" class="eng">Don't have an account
@@ -93,7 +94,8 @@ if($_GET) {
   </div><!-- container -->
 
 
-  <script src=" js/main.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
