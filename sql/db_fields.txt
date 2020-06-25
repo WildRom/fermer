@@ -1,4 +1,4 @@
-ferm_users:
+farm_users:
   user_id,
   nick_name,
   password,
@@ -10,3 +10,15 @@ ferm_users:
   level,
   dateCreate,
   dateModify
+************************
+
+farm_fields:
+  field_id,
+  user_id,
+  field_no,
+  time_s,
+  field_info,
+  time_w,
+  w_qty,
+  insect,
+  fertilizer

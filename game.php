@@ -6,7 +6,8 @@ if($_GET) {
   // var_dump($_GET);
   // echo "</pre>";
   // exit;
-  require_once('inc/config');
+  
+  require_once('inc/config.php');
 
   $newGame = false;
 
@@ -22,7 +23,7 @@ if($_GET) {
     echo "Welcome to a NEW game, ".$user;
 
     //TODO New Data to DB
-    require_once('inc/insert_new_data');
+    require_once('inc/insert_new_data.php');
     
 
   } else {
