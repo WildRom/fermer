@@ -51,7 +51,7 @@ if($_POST['login'] === 'login') {
         
         print('<script>setCookie("FARMER_NICK_NAME", "'.$user.'");</script>');
         print('<script>setCookie("FARMER_SESSION", "'.$sessionID.'");</script>');
-        print('<script>location.href="../game.php?NickName='.$user.'"</script>');        
+        print('<script>location.href="../game.php?nick='.$user.'"</script>');        
       } else {
        print('<script>location.href="../index.php?msg=wrong"</script>');
       }

@@ -22,3 +22,13 @@ farm_fields:
   w_qty,
   insect,
   fertilizer
+
+INSERT INTO farm_plants
+(plant_name,plant_input_price,plant_output_koef,water_rec,grow_interval,level,plant_pic)
+VALUES ('Agurkai',10,1.5,2,5,1,'ogurec.jpg'),
+('Pomidorai',20,1.7,2,6,2,'pomidor.jpg'),
+('Ropės',30,2,2,7,2,'repa.jpg'),
+('Svogūnai',35,2.5,2.3,6,3,'luk.jpg'),
+('Česnakai',40,2.7,2,8,3,'chesnok.jpg'),
+('Ridikai',50,3,2,9,4,'redis.jpg'),
+('Bulvės',70,3.2,2,10,5,'kartofel.jpg');

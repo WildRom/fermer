@@ -45,7 +45,7 @@ if($_GET) {
             <h4 class="ltu">Prisijunkite</h4>
             <h4 class="eng">Login into your account</h4>
           </div>
-          <!-- forma -->
+          <!-- form -->
           <form action="inc/login.php" method="post">
             <div class="form-input">
               <span><i class="fa fa-user"></i></span>

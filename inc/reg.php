@@ -79,7 +79,7 @@ if($_POST['register'] === 'register') {
       // SET COOKIE
       print('<script>setCookie("FARMER_SESSION", "'.$sessionID.'");</script>');
       print('<script>setCookie("FARMER_NICK_NAME", "'.$user.'");</script>');
-      print('<script>location.href="game.php?NewGame="true"&NickName='.$user.'"</script>');
+      print('<script>location.href="../game.php?NewGame=true&nick='.$user.'"</script>');
     }    
   };
 
